@@ -48,43 +48,40 @@ a {
 }
 
 .form {
+  background-color: #DDDDDD;
   height: 90px;
-  padding: 20px 40px;
-  background-color: #ddd;
-  form{
-    display: flex;
+  padding: 20px 10px 20px 40px;
+  &__message {
+    position: relative;
+    border: none;
+    float: left;
+    height: 50px;
+    width: calc(100% - 150px);
+  }
+  &__mask {
+    background-color: $white;
+    float: left;
+    height: 50px;
+    &__image {
+      position: absolute;
+      font-size: 1.3rem;
+      line-height: 50px;
+      right: 170px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+  &__submit {
+    background-color: $light_blue;
+    border: none;
+    color: $white;
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    margin-right: 30px;
+    padding: 0 30px;
+    cursor: pointer;
   }
 }
-
-.input-box {
-  position: relative;
-  width: 100%;
-&__text {
-  height: 50px;
-  width: 100%;
-  padding: 0 40px 0 10px;
-  color: #434a54;
-  border-style: none;
-  }
-&__image {
-  font-size: 1.3rem;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-&__file {
-  display: none;
-    }  
-  } 
-}
-.submit-btn {
-  width: 100px;
-  height: 50px;
-  padding: 0 30px;
-  margin-left: 15px;
-  background-color: $clearBule;
-  color: $white;
-  cursor: pointer;
-  }
-
-

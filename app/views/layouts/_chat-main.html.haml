@@ -12,10 +12,10 @@
   .messages
     tekito
   .form
-    %form.new_message(type="hidden")
-      .input-box
-        %input(type="text" class="input-box__text")
-        %label.input-box__image(for="message_image")
-          %i.fa.fa-picture-o     
-          %input.input-box__image__file(type="file" id="message_image")                     
-      %input.submit-btn(type="submit" value="Send")
+    =form_for [@group, @message] do |f|
+      =f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        =f.label :image, class: 'form__mask__image' do
+          =fa_icon 'picture-o', class: 'icon'
+          =f.file_field :image, class: 'hidden'
+      =f.submit 'Send', class: 'form__submit'
