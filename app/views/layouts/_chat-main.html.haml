@@ -1,0 +1,21 @@
+.chat-main
+  .main-header__left-box
+    .main-header__left-box__current-group
+      %h2.main-header__left-box__current-group__name guoup1
+      %ul.main-header__left-box__member-list
+        member:
+        %li.main-header__left-box__member-list__member
+          user
+    .main-header__edit-btn
+      = link_to edit_group_path(@group) do 
+        edit
+  .messages
+    tekito
+  .form
+    %form.new_message(type="hidden")
+      .input-box
+        %input(type="text" class="input-box__text")
+        %label.input-box__image(for="message_image")
+          %i.fa.fa-picture-o     
+          %input.input-box__image__file(type="file" id="message_image")                     
+      %input.submit-btn(type="submit" value="Send")
