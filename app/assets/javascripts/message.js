@@ -2,10 +2,9 @@ $(function(){
 
 
     function buildMessage(message){
-      var img = ""
-        if (message.image.url !== null) {
-          img = `<img src = "${message.image.url}">`
-      }
+      var img =  (message.image.url !== null)? 
+                 (`<img src = "${message.image.url}">`): ("")
+                 
       var html = `<div class="message">
                   <div class="upper-message">
                   <div class="upper-message__user-name">
@@ -44,7 +43,8 @@ $(function(){
       var html = buildMessage(message);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       $('.messages').append(html)
-      $("form")[0].reset();
+      $('#message_content').val('')
+      $('#message_image').val('')
       $('.form__submit').attr('disabled', false); 
     })
     .fail(function(){
