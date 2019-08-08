@@ -1,0 +1,21 @@
+.chat-main
+  .main-header__left-box
+    .main-header__left-box__current-group
+      %h2.main-header__left-box__current-group__name
+        = @group.name
+      %li.main-header__left-box__member-list
+        - @group.group_users.each do |user_id|
+          = user_id.user.name
+    .main-header__edit-btn
+      = link_to edit_group_path(@group) do 
+        edit
+  .messages
+    = render partial: 'layouts/message', collection: @messages
+  .form
+    =form_for [@group, @message] do |f|
+      =f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        =f.label :image, class: 'form__mask__image' do
+          =fa_icon 'picture-o', class: 'icon'
+          =f.file_field :image, class: 'hidden'
+      =f.submit 'Send', class: 'form__submit'
