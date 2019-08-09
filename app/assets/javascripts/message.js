@@ -1,3 +1,5 @@
+$(document).on('turbolinks:load', function() { 
+
 $(function(){
 
 
@@ -50,4 +52,5 @@ $(function(){
       $('.form__submit').attr('disabled', false); 
     })
   })
+});
 });
