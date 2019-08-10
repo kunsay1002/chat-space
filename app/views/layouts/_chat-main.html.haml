@@ -1,7 +1,7 @@
 .chat-main
   .main-header__left-box
     .main-header__left-box__current-group
-      %h2.main-header__left-box__current-group__name
+      %h2.main-header__left-box__current-group__name{"data-group-id": @group.id}
         = @group.name
       %li.main-header__left-box__member-list
         - @group.group_users.each do |user_id|
