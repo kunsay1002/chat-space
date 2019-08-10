@@ -1,4 +1,4 @@
-json.content             @message.content
+json.(@message, :content, :image)
 json.created_at          @message.created_at
 json.user_name           @message.user.name
-json.image               @message.image
+json.id                  @message.id
