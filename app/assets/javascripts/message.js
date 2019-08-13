@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function() { 
 
-$(function(){
-
 
     function buildMessage(message){
       var img =  (message.image.url !== null)? 
@@ -68,8 +66,8 @@ $(function(){
       messages.forEach(function (message) {
       insertHTML = buildMessage(message);
       $('.messages').append(insertHTML);
-      })
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+    });
     })
     .fail(function() {
       alert('自動更新できませんでした。')
@@ -78,4 +76,4 @@ $(function(){
   };
   setInterval(reloadMessages, 5000);
 });
-});
+
